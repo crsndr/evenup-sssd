@@ -45,6 +45,8 @@ ldap_chpass_update_last_change = true
 ldap_pwd_policy = <%= scope.lookupvar('sssd::ldap_pwd_policy') %>
 ldap_account_expire_policy = shadow
 ldap_access_order = expire
+ldap_group_search_base = <%= scope.lookupvar('sssd::ldap_group_search_base') %>
+ldap_user_search_base = <%= scope.lookupvar('sssd::ldap_user_search_base') %>
 <% elsif scope.lookupvar('sssd::provider') == 'ipa' %>
 krb5_store_password_if_offline = true
 ipa_domain = <%= scope.lookupvar('sssd::domain') %>
