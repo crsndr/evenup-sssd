@@ -120,8 +120,8 @@ class sssd (
   $manage_nsswitch    = true,
   $logsagent          = undef,
   $debug_level        = '0x02F0',
-  $ldap_group_search_base = 'ou=Groups,dc=org',
-  $ldap_user_search_base = 'ou=People,dc=org',
+  $ldap_group_search_base = undef,
+  $ldap_user_search_base = undef,
 ){
 
   validate_re($provider, ['^ldap$', '^ipa$'], 'Supported providers for SSSD are ldap and ipa')
