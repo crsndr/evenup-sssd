@@ -88,6 +88,16 @@
 #   Default: ''
 #   Valid options: beaver
 #
+# [*$ldap_group_search_base*]
+#   String.  An optional base DN, search scope and LDAP filter to restrict LDAP searches for this attribute type
+#   Default: ''
+#   Valid options: [?scope?[filter][?search_base?scope?[filter]]*]
+#
+# [*$ldap_user_search_base*]
+#   String.  An optional base DN, search scope and LDAP filter to restrict LDAP searches for this attribute type
+#   Default: ''
+#   Valid options: [?scope?[filter][?search_base?scope?[filter]]*]
+#
 # === Examples
 #
 # * Installation:

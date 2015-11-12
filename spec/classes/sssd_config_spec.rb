@@ -84,6 +84,16 @@ describe 'sssd', :type => :class do
       let(:params) { { :ldap_tls_cacert => '/tmp/cert' } }
       it { should contain_file('/etc/sssd/sssd.conf').with_content(/ldap_tls_cacert = \/tmp\/cert/)}
     end
+
+    context 'setting ldap_group_search_base' do
+      let(:params) { { :ldap_group_search_base => 'dc=Group,dc=org' } }
+      it { should contain_file('/etc/sssd/sssd.conf').with_content(/ldap_search_base = dc=Group,dc=org/)}
+    end
+
+   context 'setting ldap_user_search_base' do
+      let(:params) { { :ldap_user_search_base => 'dc=User,dc=org' } }
+      it { should contain_file('/etc/sssd/sssd.conf').with_content(/ldap_search_base = dc=User,dc=org/)}
+    end
   end
 
   context 'ipa' do
